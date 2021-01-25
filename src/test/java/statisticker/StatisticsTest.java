@@ -12,7 +12,7 @@ import org.junit.Test;
 import statisticker.alerter.EmailAlert;
 import statisticker.alerter.IAlerter;
 import statisticker.alerter.LEDAlert;
-import statisticker.statschecker.StatsChecker;
+import statisticker.statchecker.StatsChecker;
 public class StatisticsTest 
 {
     @Test
