@@ -5,14 +5,14 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
-import statisticker.EmailAlert;
-import statisticker.IAlerter;
-import statisticker.LEDAlert;
-import statisticker.StatsChecker;
 
 import org.junit.Test;
 
+
+import statisticker.alerter.EmailAlert;
+import statisticker.alerter.IAlerter;
+import statisticker.alerter.LEDAlert;
+import statisticker.statschecker.StatsChecker;
 public class StatisticsTest 
 {
     @Test
@@ -34,10 +34,9 @@ public class StatisticsTest
         List<Float> emptyList = new ArrayList<Float>();
 
         Statistics.Stats s = Statistics.getStatistics(emptyList);
-        assertTrue(s.average.isNaN());
-        assertTrue(s.min.isNaN());
-        assertTrue(s.max.isNaN());
-        
+        	assertEquals(true, Float.isNaN(s.average));
+		assertEquals(true, Float.isNaN(s.min));
+		assertEquals(true, Float.isNaN(s.max));
         //All fields of computedStats (average, max, min) must be
         //Float.NaN (not-a-number), as described in
         //https://www.geeksforgeeks.org/nan-not-number-java/
@@ -54,7 +53,7 @@ public class StatisticsTest
 
         Float[] numbers = {11.5f, 6.9f, 7.5f, 6.6f};
         List<Float> numberList = Arrays.asList(numbers);
-        checker.checkAndAlert(numbers);
+        checker.checkAndAlert(numberList);
         
         assertTrue(emailAlerter.emailSent);
         assertTrue(ledAlerter.ledGlows);
