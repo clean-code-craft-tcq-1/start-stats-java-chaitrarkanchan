@@ -1,7 +1,7 @@
 package statisticker;
 
-import static org.junit.Assert.*;
-import jdk.nashorn.internal.AssertsEnabled;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,15 +27,13 @@ public class StatisticsTest
     @Test
     public void reportsNaNForEmptyInput()
     {
-        List<___> emptyList = new ArrayList<___>();
+        List<Float> emptyList = new ArrayList<Float>();
 
         Statistics.Stats s = Statistics.getStatistics(emptyList);
         assertTrue(s.average.isNaN());
         assertTrue(s.min.isNaN());
         assertTrue(s.max.isNaN());
-        assertEquals(s.average, Float.NaN, 0.0);
-        assertEquals(s.min, Float.NaN, 0.0);
-        assertEquals(s.max, Float.NaN, 0.0);
+        
         //All fields of computedStats (average, max, min) must be
         //Float.NaN (not-a-number), as described in
         //https://www.geeksforgeeks.org/nan-not-number-java/
