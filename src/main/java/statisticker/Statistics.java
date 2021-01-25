@@ -22,7 +22,7 @@ public class Statistics
 			int listLength=numbers.size();
             Float sumofnums=0.0f;
             for(Float i:numbers){
-                sumofnums+=number;
+                sumofnums+=i;
             }
             s.average=(Float)sum/listLength;
         }
