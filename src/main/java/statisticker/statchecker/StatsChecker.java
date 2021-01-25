@@ -1,4 +1,4 @@
-package statisticker.statschecker;
+package statisticker.statchecker;
 
 import java.util.Collections;
 import java.util.List;
