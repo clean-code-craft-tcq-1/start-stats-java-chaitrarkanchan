@@ -3,38 +3,30 @@ package statisticker;
 import java.util.Collections;
 import java.util.List;
 
-public class Statistics {
-	public static class Stats {
-		public Float average;
-		public Float min;
-		public Float max;
-
-		public Stats(Float average, Float min, Float max) {
-			this.average = average;
-			this.min = min;
-			this.max = max;
-		}
-	}
-
-	public static Stats getStatistics(List<Float> numbers) {
-		// Computation Implementation
-
-		Float total = 0.0F;
-
-		if (numbers == null || numbers.isEmpty()) {
-			Stats s = new Stats(Float.NaN, Float.NaN, Float.NaN);
-			return s;
-		}
-
-		Collections.sort(numbers);
-
-		for (Float num : numbers) {
-			total += num;
-		}
-
-		Float average = (total / numbers.size());
-		Stats s = new Stats(average, numbers.get(0), numbers.get(numbers.size() - 1));
-
-		return s;
-	}
+public class Statistics 
+{
+    static class Stats
+    {
+        public Float min=Float.NaN;
+        public Float max=Float.NaN;
+        public Float average=Float.NaN;
+    }
+    public static Stats getStatistics(List<Float> numbers) 
+    {
+        //implement the computation of statistics here
+        Statistics.Stats s=new Stats();
+        if(!numbers.isEmpty())
+        {
+            s.min= Collections.min(numbers);
+            s.max= Collections.max(numbers);
+			int listLength=numbers.size();
+            Float sumofnums=0.0f;
+            for(Float i:numbers){
+                sumofnums+=number;
+            }
+            s.average=(Float)sum/listLength
+        }
+        return s;
+        
+    }
 }
