@@ -30,7 +30,12 @@ public class StatisticsTest
         List<___> emptyList = new ArrayList<___>();
 
         Statistics.Stats s = Statistics.getStatistics(emptyList);
-
+        assertTrue(s.average.isNaN());
+        assertTrue(s.min.isNaN());
+        assertTrue(s.max.isNaN());
+        assertEquals(s.average, Float.NaN, 0.0);
+        assertEquals(s.min, Float.NaN, 0.0);
+        assertEquals(s.max, Float.NaN, 0.0);
         //All fields of computedStats (average, max, min) must be
         //Float.NaN (not-a-number), as described in
         //https://www.geeksforgeeks.org/nan-not-number-java/
