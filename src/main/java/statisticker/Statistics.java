@@ -7,9 +7,9 @@ public class Statistics
 {
      static class Stats
     {
-        public Float min=0f;
-        public Float max=0f;
-        public Float average=0f;
+        public Float min=Float.NaN;
+        public Float max=Float.NaN;
+        public Float average=Float.NaN;
     }
     public static Stats getStatistics(List<Float> numbers) {
         //implement the computation of statistics here
