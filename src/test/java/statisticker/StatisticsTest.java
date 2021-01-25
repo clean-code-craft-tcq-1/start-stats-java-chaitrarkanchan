@@ -6,6 +6,10 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import statisticker.EmailAlert;
+import statisticker.IAlerter;
+import statisticker.LEDAlert;
+import statisticker.StatsChecker;
 
 import org.junit.Test;
 
