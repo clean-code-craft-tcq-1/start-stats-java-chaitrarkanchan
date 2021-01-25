@@ -24,7 +24,7 @@ public class Statistics
             for(Float i:numbers){
                 sumofnums+=number;
             }
-            s.average=(Float)sum/listLength
+            s.average=(Float)sum/listLength;
         }
         return s;
         
