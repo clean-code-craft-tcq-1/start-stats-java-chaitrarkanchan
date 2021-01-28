@@ -5,6 +5,6 @@ public class EmailAlert extends IAlerter {
 
 	@Override
 	public void alert() {
-		emailSent = true;
+		emailSent = true;/*set to true*/
 	}
 }
