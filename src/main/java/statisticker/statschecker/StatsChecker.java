@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 import statisticker.alerter.IAlerter;
+import statisticker.alerter.EmailAlert;
+import statisticker.alerter.LEDAlert;
 
 public class StatsChecker {
 	public float maxThreshold;
