@@ -4,17 +4,14 @@ import java.util.Collections;
 import java.util.List;
 
 import statisticker.alerter.IAlerter;
-import statisticker.alerter.EmailAlert;
-import statisticker.alerter.LEDAlert;
 
 public class StatsChecker {
-
-	float maxThreshold;
-	IAlerter[] alerters;
+	public float maxThreshold;
+	public IAlerter iAlerter[];
 
 	public StatsChecker(float maxThreshold, IAlerter[] alerters) {
 		this.maxThreshold = maxThreshold;
-		this.alerters = alerters;
+		this.iAlerter = alerters;
 	}
 
 	public void checkAndAlert(List<Float> numberList) {
