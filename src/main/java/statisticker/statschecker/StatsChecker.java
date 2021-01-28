@@ -20,7 +20,7 @@ public class StatsChecker {
 			Collections.sort(numberList);
 			if (maxThreshold < numberList.get(numberList.size() - 1)) {
 				for (IAlerter iAlerter : this.iAlerter) {
-					iAlerter.alert();
+					iAlerter.sample();
 				}
 			}
 
