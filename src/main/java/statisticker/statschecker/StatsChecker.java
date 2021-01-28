@@ -8,18 +8,19 @@ import statisticker.alerter.EmailAlert;
 import statisticker.alerter.LEDAlert;
 
 public class StatsChecker {
-	public float maxThreshold;
-	public IAlerter iAlerter[];
+
+	float maxThreshold;
+	IAlerter[] alerters;
 
 	public StatsChecker(float maxThreshold, IAlerter[] alerters) {
 		this.maxThreshold = maxThreshold;
-		this.iAlerter = alerters;
+		this.alerters = alerters;
 	}
 
 	public void checkAndAlert(Float[] numbers) {
 		for (Float number : numbers) {
 			if (number > maxThreshold) {
-				for (IAlerter iAlerter : alerters) {
+				for (IAlerter alerter : alerters) {
 					if (alerter instanceof EmailAlert) {
 						((EmailAlert) alerter).emailSent = true;
 					} else if (alerter instanceof LEDAlert) {
