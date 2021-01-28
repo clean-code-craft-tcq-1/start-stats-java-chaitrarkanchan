@@ -14,16 +14,17 @@ public class StatsChecker {
 		this.iAlerter = alerters;
 	}
 
-	public void checkAndAlert(List<Float> numberList) {
-
-		if (!numberList.isEmpty() && !numberList.contains(Float.NaN)) {
-			Collections.sort(numberList);
-			if (maxThreshold < numberList.get(numberList.size() - 1)) {
-				for (IAlerter iAlerter : this.iAlerter) {
-					iAlerter.alert();
+	public void checkAndAlert(Float[] numbers) {
+		for (Float number : numbers) {
+			if (number > maxThreshold) {
+				for (IAlerter iAlerter : alerters) {
+					if (alerter instanceof EmailAlert) {
+						((EmailAlert) alerter).emailSent = true;
+					} else if (alerter instanceof LEDAlert) {
+						((LEDAlert) alerter).ledGlows = true;
+					}
 				}
 			}
-
 		}
 	}
 
